@@ -1,5 +1,5 @@
 {
-  "name": "@callstack/async-storage",
+  "name": "@barracudapff/async-storage",
   "version": "2.0.3",
   "description": "Cross platform storage for React Native and Web, built on top of React Native",
   "main": "lib",
@@ -23,15 +23,16 @@
   "scripts": {
     "lint": "eslint src",
     "flow": "flow src",
-    "build": "cpx \"src/**/!(*.test.js)\" lib && babel src/index.js -o lib/index.js",
+    "build": "rm -rf lib ; cpx \"src/**/!(*.test.js)\" lib && babel src/index.js -o lib/index.js",
+    "build:ts": "cp index.d.ts lib/index.d.ts",
     "jest": "jest",
     "test": "flow src && eslint src && jest"
   },
   "dependencies": {
-    "lodash.merge": "^4.6.0"
+    "lodash.merge": "^4.6.2"
   },
   "peerDependencies": {
-    "@react-native-community/async-storage": "^1.5.0"
+    "@react-native-community/async-storage": "^1.12.1"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
